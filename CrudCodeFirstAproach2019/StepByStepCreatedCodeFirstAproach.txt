@@ -1,0 +1,35 @@
+﻿  THIS CODEFIRSTAPROACH CRUD OPERATIONS IN MVC:
+  -----------------------------------------------------
+Step01:First Open Visual Studio Click on new Project After that Project name is CrudCodeFirstAproach2019
+Step02:After that i am first cerated classes one right click on model then select class name is Employee.cs
+       and then Created anoher class is DbContext class name is EmpDataContext.
+	   Employee.cs:--
+	   using System.ComponentModel.DataAnnotations;           
+       using System.ComponentModel.DataAnnotations.Schema;
+	    [Table("CrudCodeFirstAproach")]
+    public class Employee
+    {
+        [Key]
+        public int EmpId { get; set; }
+        public string Name { get; set; }
+        public string Address { get; set; }
+        public string Email { get; set; }
+        public string MobileNo { get; set; }
+    }
+	EmpDataConext.cs:--
+	        using System.Data.Entity;
+			 public class EmpDataContext :DbContext
+            {
+             public EmpDataContext()
+             : base("name=MySqlConnection")
+             {
+             }
+             public DbSet<Employee> employees { get; set; }
+             }
+Step03:Install EntityFrameWork in NuGetManger
+       Name space is "using System.Data.Entity;"
+Step04:Next Go to controller folder right click on controller add controller name is DemoController
+           created AllEmployeedetails method and Create action method and Edit action method and edit Action method and delete action method 
+		   and then add viewsfrom(GetAllEmployeeDetails,crate,edit,upate,Delete)
+Step05:After that Run as Google Chrome First create details like (localhost:50289/Demo/Create)(localhost:50289/Demo/GetAlDetails)(localhost:50289/Demo/Update)(localhost:50289/Demo/edit)(localhost:50289/Demo/Delete)
+
